@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/contact','InquiryController@index');
+Route::post('/contact/confirm','InquiryController@confirm');
+Route::post('/contact/thanks','InquiryController@send');
 
 Auth::routes();
 
