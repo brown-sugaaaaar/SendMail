@@ -376,7 +376,7 @@ return [
         [
             'text'       => 'warning',
             'icon_color' => 'yellow',
-            'url'        => '#',
+            'url'        => '/admin_form',
         ],
         [
             'text'       => 'information',
