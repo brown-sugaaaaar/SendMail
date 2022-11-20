@@ -13,7 +13,7 @@
 
     <div class="row">
         <div class="col-md-8 form">
-            <form method="post" action="/contact/send">
+            <form method="post" action="/contact/thanks">
             @csrf
                 <div class="form-group">
                     <label>name:</label>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Inquiry;
 use Illuminate\Http\Request;
+use App\Mail\ContactsSendmail;
 
 class InquiryController extends Controller
 {
@@ -24,6 +25,12 @@ class InquiryController extends Controller
 
     public function send(Request $request)
     {
-        
+        $inputs = $request->all();
+        \Mail::to($inputs['email'])->send(new ContactsSendmail($inputs));
+        \Mail::to('rodeo1106@gmail.com')->send(new ContactsSendmail($inputs));
+
+        return view('contact.thanks', [
+            'inputs' => $inputs
+        ]);
     }
 }
